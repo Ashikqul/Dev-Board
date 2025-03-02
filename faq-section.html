@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#F7F6FF]">
+<header>
+    <nav class="">
+        <div class="flex items-center justify-between px-4 py-2 shadow-sm bg-white mt-4">
+            
+            <div class="flex items-center gap-3 ">
+                <img src="assets/logo.png" alt="Logo" class="h-10">
+                <h1 class="text-xl font-bold ">DevBoard</h1>
+            </div>
+        
+            
+            <div class="flex gap-2">
+                <button class="bg-blue-700 border-none w-32 h-12 text-white rounded mr-4">
+                    Back to Desk
+                </button>
+            </div>
+        </div>
+        
+
+    </nav>
+</header>
+
+
+<h1 class="mt-10 text-center text-3xl font-bold">Blogs</h1>
+
+<main>
+    <section class="mt-20 w-5xl	p-4 ">
+     <!-- 1-faq -->
+<div class="max-w-full">
+        <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title font-semibold">What are the different ways to select an element in the DOM?</div>
+            
+            <div class="collapse-content text-sm">DOM এ একটি উপাদান নির্বাচন করার বিভিন্ন উপায় আছে। 
+                getElementsByClassName():, getElementsByTagName():,
+querySelector(): CSS, querySelectorAll(): </div>
+          </div>
+         <!-- 2-faq -->
+
+          <div class="collapse collapse-arrow bg-base-100 border border-base-300 ">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title font-semibold">What is the difference between innerHTML, innerText, and textContent ?</div>
+            <div class="collapse-content text-sm">innerHTML, innerText, এবং textContent এর মধ্যে পার্থক্য হলো । innerHTML HTML ট্যাগসহ কনটেন্ট দেয়, innerText শুধুমাত্র দৃশ্যমান টেক্সট দেয় , আর textContent সব টেক্সট দেয়, । textContent দ্রুত কাজ করে।</div>
+          </div>
+         
+         <!-- 3-faq -->
+          <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title font-semibold">What is event delegation in the DOM?</div>
+            <div class="collapse-content text-sm">Event delegation হল একটি টেকনিক যেখানে একটি parent element-এ ইভেন্ট লিসেনার যোগ করা হয়, এবং ইভেন্ট bubbling এর মাধ্যমে child element গুলোর ইভেন্ট হ্যান্ডেল করা হয়</div>
+          </div>
+         <!-- 4-faq -->
+          <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title font-semibold">What is event bubbling in the DOM?</div>
+            <div class="collapse-content text-sm">Event bubbling হচ্ছে একটি DOM ইভেন্টের প্রক্রিয়া যেখানে ইভেন্টটি একটি child element থেকে parent element এর দিকে প্রপাগেট  হয়। </div>
+          </div>
+         <!-- 5-faq -->
+          <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title font-semibold">How do you create, add, and remove elements using JavaScript?</div>
+            <div class="collapse-content text-sm">JavaScript-এ উপাদান তৈরি, যোগ এবং মুছে ফেলার জন্য কিছু পদ্ধতি রয়েছে। নতুন উপাদান তৈরি করতে document.createElement() ব্যবহার করা হয়। একটি নতুন উপাদান যোগ করতে appendChild() বা insertBefore() ব্যবহার করা হয়, যা একটি উপাদানকে প্যারেন্ট উপাদানের মধ্যে যোগ করে। আর একটি উপাদান মুছে ফেলতে removeChild() বা remove() ব্যবহার করা হয়, যা নির্দিষ্ট উপাদানকে তার প্যারেন্ট থেকে সরিয়ে ফেলে।</div>
+          </div>
+        </div>
+
+
+    </section>
+</main>
+
+</body>
+</html>
