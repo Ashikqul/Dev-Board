@@ -1,161 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevBoard</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="p-10 bg-[#F4F7FF]">
-   <header>
-<nav class="">
-    <div class="navbar bg-base-100 shadow-sm rounded justify-between ">
-        <div class="flex items-center gap-4">
-            <img src="assets/logo.png" alt="" class="h-10">
-            <a class="text-xl font-bold">DevBoard</a>
-        </div>
-        <div class="flex items-center gap-10 mr-4">
-            <img src="assets/checkbox.png" alt="">
-            <span class="text-xl font-semibold">23</span>
-            <button class="p-2  rounded-full bg-gray-200">    
-                <img class="h-8 w-8" src="assets/theme-btn.png" alt="">
-            </button>
-            
-        </div>
-        </div>
-</nav>
-</header>
+<body class="p-6 transition-colors duration-500 bg-[#F4F7FF]">
 
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar shadow-sm rounded justify-between px-6 transition-colors duration-500 bg-white">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="" class="h-8">
+        <a class="text-xl font-bold">DevBoard</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <img src="assets/checkbox.png" alt="" class="h-6">
+        <span id="totalCount" class="text-lg font-semibold">23</span>
+        <button id="themeToggle" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition">
+          <img class="h-6 w-6" src="assets/theme-btn.png" alt="">
+        </button>
+      </div>
+    </nav>
+  </header>
 
-<main class="bg-white rounded max-w-6xl	h-full">
-    <!-- Column one -->
-    <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4 p-4 ">
-        <!-- card-1 -->
-<div class="card card-side shadow-sm w-60 h-32 bg-[#F4F7FF] mt-4	">
-    <figure>
-        <img class="w-16 h-16 mb-2 p-3 ml-4 bg-white rounded-full" src="assets/checkbox.png" alt="" />
-    </figure>
-    <div class="card-body">
-        <h2 class="card-title">Task Assigned</h2>
-        <span class="text-xl font-bold">05</span>
+  <!-- Example card -->
+  <!-- <div class="card bg-[#F4F7FF] text-black w-96 shadow-sm mt-4 p-4 transition-colors duration-500">
+    <h2 class="card-title">Fix Mobile Button Issue</h2>
+    <p>Debug using Chrome DevTools...</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Completed</button>
     </div>
-</div>
+  </div> -->
 
-<!-- card-2 -->
-<div class="card card-side shadow-sm bg-[#8393F9] ml-0 mt-4">
-    <figure>
-        <img class="w-20 h-20 mb-2 p-3 ml-4" src="assets/board.png" alt="" />
-    </figure>
-    <div class="card-body">
-        <h2 id="card-click" class="card-title ">Discover Something New Today!</h2>
-    </div>
-</div>
+  <!-- Main Layout -->
+  <main class="flex gap-6 mt-6">
+    <!-- Left Content -->
+    <div class="bg-white rounded-lg shadow-sm p-6 flex-1 transition-colors duration-500">
 
+      <!-- Top Cards -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-          <!-- card-3 -->
-        <div class=" card card-side  shadow-sm w-60	 h-32 bg-[#F4F7FF]
-        gap-2 mt-4 ">
-            <figure>
-              <img class="w-16	h-16 mb-2 p-3 ml-4 bg-white rounded-full"
-                src="assets/calender.png"
-                alt="" />
-            </figure>
-            <div class="card-body ">
-              <h2 class="card-title">Wed,<br>
-                Jul 28 2025  </h2>
-              
+        <!-- Task Assigned -->
+        <div class="card flex-row items-center bg-[#F4F7FF] shadow-sm p-4 transition-colors duration-500">
+          <img class="w-14 h-14 p-3 bg-white rounded-full" src="assets/checkbox.png" alt="">
+          <div class="ml-4">
+            <h2 class="font-semibold">Task Assigned</h2>
+            <span id="taskCount" class="text-xl font-bold">05</span>
+          </div>
+        </div>
 
-               
-             
+        <!-- Discover Card -->
+        <a href="faq-section.html" class="block">
+          <div class="card flex-row items-center bg-[#8393F9] shadow-sm p-4 cursor-pointer hover:opacity-90 transition">
+            <img class="w-16 h-16 p-2" src="assets/board.png" alt="">
+            <div class="ml-3">
+              <h2 class="font-semibold text-white">Discover Something<br>New Today!</h2>
             </div>
           </div>
-        </section>
+        </a>
 
-        <section class="p-4	grid grid-cols-1  lg:grid-cols-3 gap-4">
-           <!-- 1 -->
-            <div class="card bg-[#F4F7FF] w-96 shadow-sm mt-4  ">
-                
-                <div class="card-body">
-                    <h5 class="bg-white rounded p-2">ShopEase</h5>
-                  <h2 class="card-title">Fix Mobile Button Issue </h2>
-                  <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
-                    and ensure onClick works properly</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Completed</button>
-                  </div>
-                </div>
-              </div>
+        <!-- Date Card -->
+        <div class="card flex-row items-center bg-[#F4F7FF] shadow-sm p-4 transition-colors duration-500">
+          <img class="w-14 h-14 p-3 bg-white rounded-full" src="assets/calender.png" alt="">
+          <div class="ml-4">
+            <h2 class="font-semibold">Wed, <br> Jul 28 2025</h2>
+          </div>
+        </div>
+      </section>
 
-              <!-- 2 -->
-              <div class="card bg-[#F4F7FF] w-96 shadow-sm mt-4 ">
-                
-                <div class="card-body">
-                    <h5 class="bg-white rounded p-2">CloudSync</h5>
-                  <h2 class="card-title">Add Dark Mode</h2>
-                  <p>Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth transition effect.</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Completed</button>
-                  </div>
-                </div>
-              </div>
+      <!-- Task Cards -->
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+        <div class="card bg-[#F4F7FF] shadow-sm p-4 border-t-4 border-blue-500">
+          <h5 class="bg-white rounded px-2 py-1 w-fit">ShopEase</h5>
+          <h2 class="card-title">Fix Mobile Button Issue</h2>
+          <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</p>
+          <div class="card-actions justify-end mt-2">
+            <button class="btn btn-primary btn-sm complete-btn">Completed</button>
+          </div>
+        </div>
 
-              <!-- 3 -->
-              <div class="card bg-[#F4F7FF] w-96 shadow-sm mt-4 ">
-                
-                <div class="card-body">
-                    <h5 class="bg-white rounded p-2">SwiftPay</h5>
-                  <h2 class="card-title">Optimize  Home page </h2>
-                  <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Completed</button>
-                  </div>
-                </div>
-              </div>
-              <!-- 4 -->
-              <div class="card bg-[#F4F7FF] w-96 shadow-sm mt-4 ">
-                
-                <div class="card-body">
-                    <h5 class="bg-white rounded p-2">Meta</h5>
-                  <h2 class="card-title">Add new emoji 🤲</h2>
-                  <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Completed</button>
-                  </div>
-                </div>
-              </div>
-              <!-- 5 -->
-              <div class="card bg-[#F4F7FF] w-96 shadow-sm mt-4 ">
-                
-                <div class="card-body">
-                    <h5 class="bg-white rounded p-2">Google LLC</h5>
-                  <h2 class="card-title">Integrate OpenAI API </h2>
-                  <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
-                    and ensure onClick works properly</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Completed</button>
-                  </div>
-                </div>
-              </div>
-              <!-- 6 -->
+        <div class="card bg-[#F4F7FF] shadow-sm p-4 border-t-4 border-green-500">
+          <h5 class="bg-white rounded px-2 py-1 w-fit">CloudSync</h5>
+          <h2 class="card-title">Add Dark Mode</h2>
+          <p>Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth transition effect.</p>
+          <div class="card-actions justify-end mt-2">
+            <button class="btn btn-primary btn-sm complete-btn">Completed</button>
+          </div>
+        </div>
 
-              <div class="card bg-[#F4F7FF] w-96 shadow-sm mt-4 ">
-                
-                <div class="card-body">
-                    <h5 class="bg-white rounded p-2">Glassdoar</h5>
-                  <h2 class="card-title">Improve Job searching </h2>
-                  <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Completed</button>
-                  </div>
-                </div>
-              </div>
-              </section>
-</main>
+        <div class="card bg-[#F4F7FF] shadow-sm p-4 border-t-4 border-pink-500">
+          <h5 class="bg-white rounded px-2 py-1 w-fit">SwiftPay</h5>
+          <h2 class="card-title">Optimize Home Page</h2>
+          <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly.</p>
+          <div class="card-actions justify-end mt-2">
+            <button class="btn btn-primary btn-sm complete-btn">Completed</button>
+          </div>
+        </div>
 
+        <div class="card bg-[#F4F7FF] shadow-sm p-4 border-t-4 border-yellow-500">
+          <h5 class="bg-white rounded px-2 py-1 w-fit">Meta</h5>
+          <h2 class="card-title">Add new emoji 🤲</h2>
+          <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</p>
+          <div class="card-actions justify-end mt-2">
+            <button class="btn btn-primary btn-sm complete-btn">Completed</button>
+          </div>
+        </div>
 
+        <div class="card bg-[#F4F7FF] shadow-sm p-4 border-t-4 border-purple-500">
+          <h5 class="bg-white rounded px-2 py-1 w-fit">Google LLC</h5>
+          <h2 class="card-title">Integrate OpenAI API</h2>
+          <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</p>
+          <div class="card-actions justify-end mt-2">
+            <button class="btn btn-primary btn-sm complete-btn">Completed</button>
+          </div>
+        </div>
 
-<script src="script/completed.js"></script>
+        <div class="card bg-[#F4F7FF] shadow-sm p-4 border-t-4 border-red-500">
+          <h5 class="bg-white rounded px-2 py-1 w-fit">Glassdoor</h5>
+          <h2 class="card-title">Improve Job Searching</h2>
+          <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly</p>
+          <div class="card-actions justify-end mt-2">
+            <button class="btn btn-primary btn-sm complete-btn">Completed</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Right Sidebar -->
+    <aside class="bg-white rounded-lg shadow-sm p-6 w-64 transition-colors duration-500">
+      <h2 class="font-bold text-lg">Activity Log</h2>
+      <button id="clearHistory" class="btn btn-xs btn-outline mt-2 mb-4">Clear History</button>
+      <div id="activityLog" class="text-sm space-y-2"></div>
+    </aside>
+  </main>
+
+  <script>
+    // Colors list
+    const colors = ["#F4F7FF", "#1E293B", "#F59E0B", "#10B981", "#3B82F6", "#EC4899", "#9333EA", "#EF4444"];
+    let colorIndex = 0;
+
+    const themeBtn = document.getElementById("themeToggle");
+    const body = document.body;
+
+    themeBtn.addEventListener("click", () => {
+      colorIndex = (colorIndex + 1) % colors.length;
+      body.style.backgroundColor = colors[colorIndex];
+    });
+
+    // Task counter + activity log
+    const taskCount = document.getElementById("taskCount");
+    const totalCount = document.getElementById("totalCount");
+    const log = document.getElementById("activityLog");
+    const clearBtn = document.getElementById("clearHistory");
+
+    document.querySelectorAll(".complete-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (confirm("Are you sure you want to mark this task as completed?")) {
+          let tasks = parseInt(taskCount.innerText);
+          if (tasks > 0) {
+            taskCount.innerText = tasks - 1;
+          }
+          totalCount.innerText = parseInt(totalCount.innerText) + 1;
+
+          const time = new Date().toLocaleTimeString();
+          const taskName = btn.closest(".card").querySelector(".card-title").innerText;
+          let entry = document.createElement("p");
+          entry.textContent = `✅ Completed "${taskName}" at ${time}`;
+          log.prepend(entry);
+
+          btn.disabled = true;
+          btn.classList.add("opacity-50", "cursor-not-allowed");
+        }
+      });
+    });
+
+    clearBtn.addEventListener("click", () => {
+      log.innerHTML = "";
+    });
+  </script>
 </body>
 </html>
